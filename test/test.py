@@ -45,3 +45,16 @@ async def test_delete_estudante_negativo():
 async def test_delete_estudante_positivo():
     result = await delete_estudante(10)
     assert result
+
+@pytest.mark.asyncio
+async def test_hello_nome():
+    nome = "Gabrielly"
+    result = await hello(nome)
+    assert result == {"mensagem": f"Olá, {nome}!"}
+
+
+@pytest.mark.asyncio
+async def test_funcaoteste_intervalo():
+    result = await funcaoteste()
+    assert result["teste"] is True
+    assert 0 <= result["num_aleatorio"] <= 5000
